@@ -1,5 +1,9 @@
 # InfoPanel OBS Studio Plugin
 
+> [!WARNING]
+> This plugin was developed with the assistance of Gemini AI. I don't know any programming languages
+> It has been thoroughly tested and works perfectly.
+
 A standalone plugin for [InfoPanel](https://github.com/habibrehmansg/infopanel) that monitors the status of **OBS Studio** via WebSockets.
 
 ## Features
