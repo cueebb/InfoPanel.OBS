@@ -1,4 +1,4 @@
-# InfoPanel OBS Studio Plugin (v1.1.0)
+# InfoPanel OBS Studio Plugin
 
 A standalone plugin for [InfoPanel](https://github.com/habibrehmansg/infopanel) that monitors the status of **OBS Studio** via WebSockets.
 
