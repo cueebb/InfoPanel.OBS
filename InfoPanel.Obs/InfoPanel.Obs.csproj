@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Platforms>x64</Platforms>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<NoWarn>$(NoWarn);MSB3277</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="obs-websocket-dotnet" Version="5.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="InfoPanel.Plugins">
+			<HintPath>C:\Program Files (x86)\InfoPanel\InfoPanel.Plugins.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="InfoPanel.Plugins.Graphics">
+		  <HintPath>C:\Program Files (x86)\InfoPanel\InfoPanel.Plugins.Graphics.dll</HintPath>
+		</Reference>
+		<Reference Include="InfoPanel.Plugins.Host">
+			<HintPath>C:\Program Files (x86)\InfoPanel\InfoPanel.Plugins.Host.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="InfoPanel.Plugins.Loader">
+		  <HintPath>C:\Program Files (x86)\InfoPanel\InfoPanel.Plugins.Loader.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Message Text="=== Copying plugin files to InfoPanel ===" Importance="high" />
+		<Exec Command="robocopy &quot;$(TargetDir).&quot; &quot;C:\ProgramData\InfoPanel\plugins\InfoPanel.OBS&quot; &quot;*.dll&quot; /R:1 /W:1" IgnoreExitCode="true" />
+		<Exec Command="copy &quot;$(ProjectDir)PluginInfo.ini&quot; &quot;C:\ProgramData\InfoPanel\plugins\InfoPanel.OBS\&quot; /Y" IgnoreExitCode="true" />
+	</Target>
+
+</Project>
