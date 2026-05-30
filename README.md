@@ -24,7 +24,7 @@ Upon the first launch, the plugin will create a configuration file at:
 `Documents/InfoPanel/OBS/config.ini`
 You can simply open it in `Plugins` tab in Infopanel via `Open config` button
 
-Open this file with any text editor and set your OBS WebSocket password ():
+Open this file with any text editor and set your OBS WebSocket password:
 ```ini
 [OBS_Settings]
 WebsocketPassword=YourActualOBSPassword 
