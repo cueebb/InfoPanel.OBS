@@ -27,4 +27,7 @@ You can simply open it in `Plugins` tab in Infopanel via `Open config` button
 Open this file with any text editor and set your OBS WebSocket password:
 ```ini
 [OBS_Settings]
-WebsocketPassword=YourActualOBSPassword 
+WebsocketPassword=YourActualOBSPassword
+```
+> [!NOTE]
+> Feel free to contribute or report any bugs in the Issues section!
